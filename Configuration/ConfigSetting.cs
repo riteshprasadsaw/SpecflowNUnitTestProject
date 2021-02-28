@@ -9,5 +9,8 @@ namespace SpecflowNUnitTestProject.Configuration
         public string BrowseType { get; set; }
         public string Ecommerce_Url { get; set; }
         public string Bank_Url { get; set; }
+
+        public string SourceLabs_Username { get; set; }
+        public string SourceLabs_AccessKey { get; set; }
     }
 }
