@@ -1,16 +1,22 @@
 BDD SpecFlow Webdriver Nunit Framework
+======================================
 
 Uses:
+----------
 
 SpecFlow 3 (BDD)
 Selenium (WebDriver)
 NUnit 3.x
-specflow-Extent-Report
-utilises Page Object Model pattern
-can be run using Jenkins
-runs tests locally or in saucelabs (account required) and reports results back to the Jenkins job
-takes screenshots on failure of web tests
+Specflow-Extent-Report
+Utilises Page Object Model pattern
+Can be run using Jenkins/Azure DevOps
+Runs tests locally or in saucelabs 
+Takes screenshots on failure of web tests
+Parallel execution
+Driver Factory using Dependency Manager
 
+Steps:
+-------
 
 Install Visual Studio (Enterprise 2019)
 
