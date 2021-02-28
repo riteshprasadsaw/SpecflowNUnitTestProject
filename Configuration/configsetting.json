@@ -1,0 +1,5 @@
+﻿{
+    "BrowserType": "Chrome",
+    "Ecommerce_Url": "https://www.saucedemo.com/",
+    "Bank_Url": "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login"
+}
