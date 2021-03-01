@@ -14,7 +14,7 @@ namespace SpecflowNUnitTestProject.Extentions
 {
     public static class Extension
     {
-        public static IWebElement WaitForEnabled(this IWebElement element, int timeSpan = 10000)
+        public static IWebElement WaitForEnabled(this IWebElement element, int timeSpan = 60000)
         {
             Stopwatch watch = new Stopwatch();
 
@@ -28,7 +28,7 @@ namespace SpecflowNUnitTestProject.Extentions
             throw new ElementNotInteractableException();
         }
 
-        public static IWebElement WaitForVisible(this IWebElement element, int timeSpan = 10000)
+        public static IWebElement WaitForVisible(this IWebElement element, int timeSpan = 60000)
         {
             Stopwatch watch = new Stopwatch();
 

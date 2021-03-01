@@ -11,6 +11,7 @@ using SpecflowNUnitTestProject.Configuration;
 using Microsoft.Extensions.Configuration;
 using BoDi;
 using OpenQA.Selenium.Support.Extensions;
+using SpecflowNUnitTestProject.Extentions;
 
 /**
  * @author: Ritesh Saw
@@ -110,11 +111,15 @@ namespace SpecflowNUnitTestProject.Hooks
         [AfterScenario]
         public static void AfterScenario(ScenarioContext scenarioContext)
         {
+           
+            var mediaEntity = Utility.CaptureScreenshotFromBase64(scenarioContext.ScenarioInfo.Title.Trim(),_driver);
+
             if (scenarioContext.TestError != null)
             {
                 _driver.TakeScreenshot().SaveAsFile(Path.Combine("..", "..", "TestResults", $"{scenarioContext.ScenarioInfo.Title}.png"), ScreenshotImageFormat.Png);
+                _scenario.Log(Status.Fail, mediaEntity);
             }
-           // _driver?.Dispose();
+           
         }
 
         [AfterFeature]
