@@ -4,6 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
+
+
+/**
+ * @author: Ritesh Saw
+ *	
+ *	01-03-2021
+ */
 
 namespace SpecflowNUnitTestProject.Steps
 {
@@ -27,7 +35,7 @@ namespace SpecflowNUnitTestProject.Steps
         [Given(@"user is on Ecommerce Login page")]
         public void GivenUserIsOnEcommerceLoginPage()
         {
-            //loginPage = new LoginPage_Ecommerce();
+           
             loginPage.GoToEcommerceApplication();
             
         }
@@ -35,7 +43,13 @@ namespace SpecflowNUnitTestProject.Steps
         [Given(@"enters valid credentials")]
         public void GivenEntersValidCredentials(Table users)
         {
-            loginPage.EnterUserDetailsInLoginFileds(users.Rows[0][0], users.Rows[0][1]);
+            var usersCredential = users.CreateDynamicSet();
+
+            foreach (var user in usersCredential)
+            {
+                loginPage.EnterUserDetailsInLoginFileds(user.Username, user.Password);
+            }
+  
           
         }
         
@@ -48,7 +62,13 @@ namespace SpecflowNUnitTestProject.Steps
         [When(@"user add two items to cart")]
         public void WhenUserAddTwoItemsToCart(Table products)
         {
-            productpage.AddTwoProductsInCart(products.Rows[0][0], products.Rows[0][1]);
+            var productsItems = products.CreateDynamicSet();
+
+            foreach (var product in productsItems)
+            {
+                productpage.AddTwoProductsInCart(product.product1, product.product2);
+            }
+
         }
         
         [When(@"verify the items and total")]
@@ -65,15 +85,15 @@ namespace SpecflowNUnitTestProject.Steps
         }
         
         [When(@"user add his details")]
-        public void WhenUserAddHisDetails(Table users)
+        public void WhenUserAddHisDetails(Table details)
         {
-            checkoutPage.AddUserDetails(users.Rows[0][0], users.Rows[0][1], users.Rows[0][2]);
+            checkoutPage.AddUserDetails(details.Rows[0][0], details.Rows[0][1], details.Rows[0][2]);
         }
         
         [When(@"user clicks on logout link")]
         public void WhenUserClicksOnLogoutLink()
         {
-            // ScenarioContext.Current.Pending();
+            
             checkoutPage.logoutFromApplication();
         }
         
