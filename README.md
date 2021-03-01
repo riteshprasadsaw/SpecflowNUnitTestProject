@@ -1,25 +1,17 @@
-BDD SpecFlow Webdriver Nunit Framework
+BDD SpecFlow Webdriver Nunit 3 Framework
 ======================================
 
-Uses:
-----------
+The framework has following features
 
-SpecFlow 3 (BDD)
-Selenium (WebDriver)
-NUnit 3.x
-Specflow-Extent-Report
-Utilises Page Object Model pattern
-Can be run using Jenkins/Azure DevOps
-Runs tests locally or in saucelabs 
-Takes screenshots on failure of web tests
-Parallel execution
-Driver Factory using Dependency Manager
+1. BDD based framework Design
+2. Nunit 3 based framework
+3. Report Generation (using ExtentReport)
+3. Extention/Helper class to handle web component such as (Button,Link etc)
+4. Centralized Configuration (Using Json file)
+5. Hooks for different browser support (using chrome,SourceLabs...)
+6. Parallel Execution
+6. Latest Microsoft .NET Core 3.0+
+7. POM based object repository
 
-Steps:
--------
-
-Install Visual Studio (Enterprise 2019)
-
-Install NuGet (package manager). 
-
-Use NuGet (Project > Manage NuGet packages) to install Specflow, Nunit and Selenium:
+Here is the basic installation step:
+To use the framework, please download and unzip it. Open using VS and update the project dependecies using NUGet package manager.
